@@ -1,0 +1,29 @@
+{
+  "name": "deep-thoughts",
+  "version": "1.0.0",
+  "description": "This project is an exercise conducted under the direction of the UNC-Bootcamp module 21",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js",
+    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "seed": "cd server && npm run seed"
+    
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kabradshaw1/deep-thoughts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kabradshaw1/deep-thoughts/issues"
+  },
+  "homepage": "https://github.com/kabradshaw1/deep-thoughts#readme",
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}

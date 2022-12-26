@@ -3,6 +3,7 @@ import { Navigate, useParams } from 'react-router-dom';
 
 import ThoughtList from '../components/ThoughtList';
 import FriendList from '../components/FriendList';
+import ThoughtForm from '../components/ThoughtForm';
 
 import { ADD_FRIEND } from '../utils/mutations';
 import { useQuery, useMutation } from '@apollo/client';
@@ -47,7 +48,7 @@ const Profile = (props) => {
       console.error(e);
     }
   };
-  
+
   return (
     <div>
       <div className="flex-row mb-3">
@@ -55,9 +56,11 @@ const Profile = (props) => {
           Viewing {userParam ? `${user.username}'s` : 'your'} profile.
         </h2>
 
-        <button className="btn ml-auto" onClick={handleClick}>
-          Add Friend
-        </button>
+        {userParam && (
+          <button className="btn ml-auto" onClick={handleClick}>
+            Add Friend
+          </button>
+        )}
       </div>
 
       <div className="flex-row justify-space-between mb-3">
@@ -76,7 +79,9 @@ const Profile = (props) => {
           />
         </div>
       </div>
+      <div className="mb-3">{!userParam && <ThoughtForm />}</div>
     </div>
+    
   );
 };
 
